@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Position</title>
+</head>
+<link rel="stylesheet" href="css/addEmployee.css" />
+<body>
+
+<div class="form-container">
+    <h2>添加新职位</h2>
+    <label for="department">部门:</label>
+    <select id="department" name="department">
+        <!-- 动态生成 -->
+    </select>
+
+    <label for="position">职位名称:</label>
+    <input type="text" id="position" name="position" required>
+
+    <button type="submit" onclick="addJob()">添加</button>
+</div>
+</body>
+<script src="js/axios.min.js"></script>
+<script src="js/axiosInterceptor.js"></script>
+<script src="js/utils.js"></script>
+<script src="js/addPosition.js"></script>
+</html>

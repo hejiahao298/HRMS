@@ -1,0 +1,149 @@
+		body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: #f4f4f4;
+        }
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: #333;
+            color: #fff;
+            padding: 2% 10%;
+            text-align: center;
+        }
+        .header h2 {
+            margin: 0;
+        }
+        .welcome-box {
+            cursor: pointer;
+            color: #fff; /* 默认文本颜色 */
+        }
+        .welcome-box:hover {
+            color: #e8491d; /* 鼠标悬停时文本颜色 */
+        }
+        .welcome-box span {
+            display: inline-block;
+        }
+        .welcome-box:hover .dropdown-content {
+            display: block;
+        }
+        .dropdown-content {
+            /* display: none; */
+            position: absolute;
+            background-color: #f9f9f9;
+            min-width: 100px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+			margin-top: -20px;
+            border-radius: 15px;
+        }
+        .dropdown-content a {
+
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+        .dropdown-content a:hover {
+            background-color: #ddd;
+        }
+
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+        }
+        .sidebar {
+            background: #fff;
+            width: 13%;
+            height: calc(100vh - 40px);
+            margin: 10px;
+            padding: 10px;
+            border-radius: 15px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 10px;
+			font-size: 20px;
+        }
+        .sidebar ul {
+            list-style: none;
+            padding: 0;
+        }
+        .sidebar li {
+            padding: 10px;
+            margin-bottom: 5px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+        .sidebar li:hover,
+        .sidebar .active {
+            background: #ddd;
+            color: #333;
+        }
+        .content {
+            flex-grow: 1;
+            margin: 10px;
+            padding: 20px;
+            background: #fff;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        .section {
+            margin-bottom: 20px;
+            padding: 20px;
+            background: #fff;
+            border: 1px solid #ddd; /* 添加灰色线框 */
+            border-radius: 10px;
+        }
+        .section-title {
+            background: #ddd;
+            padding: 10px;
+            border-radius: 10px 10px 0 0;
+            margin: -20px -20px 20px;
+        }
+        .section-content {
+            padding: 10px;
+            border-radius: 0 0 10px 10px;
+        }
+		.sidebar-a{
+			text-decoration: none;
+		}
+		
+		.header-a{
+			text-decoration: none; /* 移除下划线 */
+			font-size: 22px; /* 设置字体大小，您可以根据需要调整这个值 */
+			color: white; /* 设置字体颜色为白色 */
+		}
+		.header-a:hover {
+		    color: gray; /* 设置鼠标经过时的字体颜色为灰色 */
+		}
+
+        a.btn {
+            text-decoration: none;
+            padding: 5px 10px;
+            background-color: #333;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s ease;
+        }
+        a.btn:hover {
+            color: gray; /* 设置鼠标经过时的字体颜色为灰色 */
+        }
+
+        label {
+            display: block;
+            margin-top: 20px;
+            color: #333333;
+        }
+        .ele{
+            width: 30%;
+            padding: 12px;
+            margin-top: 8px;
+            border: 1px solid #cccccc;
+            border-radius: 4px;
+            box-sizing: border-box; /* Makes sure padding doesn't affect width */
+        }

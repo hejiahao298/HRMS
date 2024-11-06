@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>员工管理</title>
+	<link rel="stylesheet" href="css/index.css" />
+	<link rel="stylesheet" href="css/employee.css" />
+</head>
+<body>
+<header class="header">
+    <a class="header-a" href="index.html">龙科人事管理系统</a>
+    <!-- 这里将动态添加welcome-box -->
+</header>
+<div class="container" id="container">
+    <!-- 动态加载侧边栏sidebar.html -->
+        <div class="content">
+            <div class="search-box">
+                <input id="search" type="text" placeholder="输入员工的姓名" name="search" size="50">
+                <input type="submit" value="查询" onclick="searchEmployee()">
+            </div>
+            <a href="addEmployee.html" class="btn">新增</a>
+            <table id="employeeTable">
+                <thead>
+                    <tr>
+						<th>员工号</th>
+                        <th>姓名</th>
+                        <th>Emile</th>
+                        <th>电话</th>
+                        <th>雇佣日期</th>
+                        <th>合同到期时间</th>
+                        <th>部门</th>
+                        <th>职位</th>
+						<th>薪资</th>
+						<th>修改</th>
+						<th>删除</th>
+                    </tr>
+                </thead>
+                <tbody>
+                <!-- 表格数据动态加载 -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+</body>
+<script src="js/axios.min.js"></script>
+<script src="js/axiosInterceptor.js"></script>
+<script src="js/utils.js"></script>
+<script src="js/employee.js"></script>
+</html>

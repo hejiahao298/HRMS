@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GitHub Style Login Page</title>
+    <link rel="stylesheet" href="css/login.css">
+</head>
+<body>
+    <div class="login-container">
+        <img src="img/logo.png" alt="系统LOGO" class="logo">
+        <div class="form-container">
+            <h2>龙科人事管理</h2>
+            <div class="input-group">
+                <label for="username">用户名</label>
+                <input id="username" type="text" id="username" placeholder="用户名" required>
+            </div>
+            <div class="input-group">
+                <label for="password">密码</label>
+                <input id="password" type="password" id="password" placeholder="Password" required>
+            </div>
+            <h5 id="message" style="color: red;"></h5>
+            <button id="btn" type="submit" onclick="login()" class="btn">登录</button>
+
+            <div class="additional-actions">
+                <a href="updataPassword.html" class="forgot-password">忘记密码?</a>
+            </div>
+
+            <div class="create-account">
+                <p>没有账号? <a href="register.html" class="signup-link">创建一个账户</a></p>
+            </div>
+    </div>
+    </div>
+    <script src="js/axios.min.js"></script>
+    <script src="js/utils.js"></script>
+	<script src="js/login.js"></script>
+</body>
+</html>

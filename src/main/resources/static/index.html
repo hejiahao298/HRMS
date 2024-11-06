@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>人事管理系统</title>
+	<link rel="stylesheet" href="css/index.css">
+</head>
+<body>
+<header class="header">
+    <a class="header-a" href="index.html">龙科人事管理系统</a>
+    <!-- 这里将动态添加welcome-box -->
+</header>
+<div class="container" id="container">
+    <!-- 动态加载侧边栏sidebar.html -->
+        <div class="content">
+            <div class="section">
+                <div class="section-title">
+                    <h2>员工管理</h2>
+                </div>
+                <div class="section-content">
+                    <span>员工的总数:</span> <span id="empAll"></span><br><br>
+					<span>即将合同到期的员工数:</span> <span id="expNum"></span>
+                </div>
+            </div>
+            <div class="section">
+                <div class="section-title">
+                    <h2>招聘管理</h2>
+                </div>
+                <div class="section-content">
+					<span>目前正在招聘职位数:</span> <span id="positions"></span><br><br>
+					<span>公司目前需要人才数:</span> <span id="openings"></span>
+                </div>
+            </div>
+            <div class="section">
+                <div class="section-title">
+                    <h2>部门管理</h2>
+                </div>
+                <div class="section-content">
+                    <span>管理部门，查看部门信息，领导信息</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+<script src="js/axios.min.js"></script>
+<script src="js/axiosInterceptor.js"></script>
+<script src="js/utils.js"></script>
+<script src="js/index.js"></script>
+
+
+</html>

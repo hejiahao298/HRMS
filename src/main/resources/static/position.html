@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <title>职位管理</title>
+  <link rel="stylesheet" href="css/index.css" />
+  <link rel="stylesheet" href="css/recruitment.css" />
+</head>
+<body>
+<header class="header">
+  <a class="header-a" href="index.html">龙科人事管理系统</a>
+  <!-- 这里将动态添加welcome-box -->
+</header>
+<div class="container" id="container">
+<!-- 动态加载侧边栏sidebar.html -->
+  <div class="content">
+    <div class="search-box">
+      <select id="department" name="department" class="ele">
+        <!--      动态生成      -->
+      </select>
+      <input type="submit" value="查询" onclick="searchPosition()">
+    </div>
+    <a href="addPosition.html" class="btn">新增</a>
+    <table id="positionTable">
+      <thead>
+      <tr>
+        <th>部门</th>
+        <th>职位名称</th>
+        <th>操作</th>
+      </tr>
+      </thead>
+      <tbody>
+      <!-- 表格数据动态加载 -->
+      </tbody>
+    </table>
+  </div>
+</div>
+</body>
+<script src="js/axios.min.js"></script>
+<script src="js/axiosInterceptor.js"></script>
+<script src="js/utils.js"></script>
+<script src="js/position.js"></script>
+</html>

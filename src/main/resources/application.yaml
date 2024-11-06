@@ -1,0 +1,11 @@
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3307/HRMS
+    username: root
+    password: root
+
+# 将数据库中字段：如 department——id转换成departmentId
+mybatis:
+  configuration:
+    map-underscore-to-camel-case: true

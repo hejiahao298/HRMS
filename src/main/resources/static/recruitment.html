@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>招聘管理</title>
+	<link rel="stylesheet" href="css/index.css" />
+	<link rel="stylesheet" href="css/recruitment.css" />
+</head>
+<body>
+<header class="header">
+    <a class="header-a" href="index.html">龙科人事管理系统</a>
+    <!-- 这里将动态添加welcome-box -->
+</header>
+<div class="container" id="container">
+    <!-- 动态加载侧边栏sidebar.html -->
+        <div class="content">
+			<div class="search-box">
+                <input id="jobName" type="text" placeholder="输入部门名称或职位名称" name="search" size="50">
+                <input type="submit" value="查询" onclick="searchJob()">
+			</div>
+            <a href="addCruitment.html" class="btn">新增</a>
+            <table id="recruitmentTable">
+                <thead>
+                    <tr>
+                        <th>职位名称</th>
+                        <th>部门</th>
+                        <th>职位描述</th>
+                        <th>需要人数</th>
+						<th>职位状态</th>
+						<th>发布日期</th>
+                        <th>操作</th>
+                    </tr>
+                </thead>
+                <tbody>
+                <!-- 表格数据动态加载 -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+</body>
+<script src="js/axios.min.js"></script>
+<script src="js/axiosInterceptor.js"></script>
+<script src="js/utils.js"></script>
+<script src="js/recruitment.js"></script>
+</html>
