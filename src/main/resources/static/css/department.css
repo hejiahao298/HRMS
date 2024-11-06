@@ -58,4 +58,5 @@
 			transition: background-color 0.3s;
 		}
 		.borrow-btn:hover {
-			background: #4cae4c;
+            background: #4cae4c;
+        }
