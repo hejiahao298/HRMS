@@ -21,11 +21,8 @@ function createRow(pos) {
 }
 
 function loadPosition(){
-
-    axios({
-        url: "http://localhost:8080/pos/getAllVO",
-        method: 'get',
-    }).then(res => {
+    sendRequestParams('/pos/getAllVO','get',null)
+        .then(res => {
         const data = res.data.data;
         data.forEach(pos => createRow(pos));
     })
@@ -33,13 +30,9 @@ function loadPosition(){
 
 function searchPosition(){
     tbody.innerHTML=``;
-    axios({
-        url: "http://localhost:8080/pos/getPosByDep",
-        method: 'get',
 
-        params:{
-            "departmentId":getEleVal("department")
-        }
+    sendRequestParams('/pos/getPosByDep','get',{
+        "departmentId":getEleVal("department")
     }).then(res => {
         const data = res.data.data;
         data.forEach(pos => createRow(pos));
@@ -48,10 +41,9 @@ function searchPosition(){
 
 /*---------------------删除职位信息-------------------*/
 function deletePos(posId) {
-    axios({
-        url: "http://localhost:8080/pos/deletePosById",
-        method: "delete",
-        params: { "posId": posId }
+
+    sendRequestParams('/pos/deletePosById','delete',{
+        "posId": posId
     }).then(res => {
         const data = res.data.data;
         if (data !== 1) {

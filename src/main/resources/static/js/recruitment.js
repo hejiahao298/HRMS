@@ -19,10 +19,9 @@ function createRow(job) {
 }
 
 function loadAllJobs() {
-    axios({
-        url: "http://localhost:8080/job/getAll",
-        method: 'get',
-    }).then(res => {
+
+    sendRequestParams('/job/getAll','get',null)
+        .then(res => {
         const data = res.data.data;
         data.forEach(job => createRow(job));
     })
@@ -32,10 +31,8 @@ function loadAllJobs() {
 
 /*---------------------删除招聘信息-------------------*/
 function deleteJob(jobId) {
-    axios({
-        url: "http://localhost:8080/job/deleteJobById",
-        method: "delete",
-        params: { "jobId": jobId }
+    sendRequestParams('/job/deleteJobById','delete',{
+        "jobId": jobId
     }).then(res => {
         const data = res.data.data;
         if (data !== 1) {
@@ -54,10 +51,8 @@ function searchJob() {
     const jobName = getEleVal("jobName");
     tbody.innerHTML = "";
 
-    axios({
-        url: "http://localhost:8080/job/getJobByName",
-        method: "get",
-        params: { "jobName": jobName }
+    sendRequestParams('/job/getJobByNam','get',{
+        "jobName": jobName
     }).then(res => {
         const data = res.data.data;
         data.forEach(job => createRow(job));

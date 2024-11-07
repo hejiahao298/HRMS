@@ -11,12 +11,8 @@ function loadHtml(){
     const empId = params.get('empId');
 
     // 访问后端获取通过员工Id获取员工信息，渲染到input中
-    axios({
-        url:"http://localhost:8080/emp/getEmpById",
-        method:"get",
-        params:{
-            "empId":empId
-        }
+    sendRequestParams('/emp/getEmpById','get',{
+        "empId":empId
     }).then(res => {
         const data = res.data.data;
         setEleVal("empId",data.employeeId);
@@ -35,21 +31,16 @@ function loadHtml(){
 
 /*---------------------更新员工--------------------*/
 function UpdateEmp(){
-    axios({
-        url:"/emp/updateEmp",
-        method:"put",
-
-        data:{
-            "employeeId":getEleVal("empId"),
-            "name":getEleVal("name"),
-            "email":getEleVal("email"),
-            "phone":getEleVal("phone"),
-            "hireDate":getEleVal("hireDate"),
-            "expiryDate":getEleVal("expiryDate"),
-            "departmentId":getEleVal("department"),
-            "positionId": getEleVal("position"),
-            "salary":getEleVal("salary")
-        }
+    sendRequestData('/emp/updateEmp','put',{
+        "employeeId":getEleVal("empId"),
+        "name":getEleVal("name"),
+        "email":getEleVal("email"),
+        "phone":getEleVal("phone"),
+        "hireDate":getEleVal("hireDate"),
+        "expiryDate":getEleVal("expiryDate"),
+        "departmentId":getEleVal("department"),
+        "positionId": getEleVal("position"),
+        "salary":getEleVal("salary")
     }).then(res => {
         const i = res.data.data;
         if(i!=1){

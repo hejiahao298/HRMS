@@ -2,20 +2,11 @@ loadSidebar();
 
 loadWelcomeBox()
 
-axios({
-    url:"http://localhost:8080/emp/index",
-    method:"get"
-}).then(res => {
+sendRequestData('/emp/index','get',null)
+    .then(res => {
     const data = res.data.data;
-    const empAll = document.getElementById("empAll");
-    empAll.textContent=data.empCount;
-
-    const expNum = document.getElementById("expNum");
-    expNum.textContent=data.expiryCount;
-
-    const positions = document.getElementById("positions");
-    positions.textContent =data.jobCount;
-
-    const openings = document.getElementById("openings");
-    openings.innerHTML = data.jobOpenings;
+    getElement('empAll').textContent=data.empCount;
+    getElement('expNum').textContent=data.expiryCount;
+    getElement('positions').textContent=data.jobCount;
+    getElement('openings').textContent = data.jobOpenings;
 })

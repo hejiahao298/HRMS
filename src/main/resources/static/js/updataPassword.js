@@ -3,24 +3,16 @@ function restPassword(){
     const newPassword = getEleVal("new-password");
     const confirmPassword = getEleVal("confirm-new-password");
     if(newPassword===confirmPassword){
-        axios({
-            url:'http://localhost:8080/user/findUsername',
-            method:'get',
-            params:{
-                "username":username
-            }
+        sendRequestParams('/user/findUsernam','get',{
+            "username":username
         }).then(res => {
             const data = res.data.data;
             if(data==null){
                 alert("用户名不存在");
             }else{
-                return axios({
-                    url:"http://localhost:8080/user/resetPassword",
-                    method:"post",
-                    params:{
-                        "newPassword":newPassword,
-                        "username":username,
-                    }
+            return sendRequestParams('/user/resetPassword','post',{
+                    "newPassword":newPassword,
+                    "username":username,
                 }).then(res => {
                     alert("重置成功！");
                     location.href="login.html";

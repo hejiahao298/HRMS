@@ -1,16 +1,12 @@
 function login(){
     const username = getEleVal("username");
     const password = getEleVal("password");
-    const message = document.getElementById("message");
+    const message = getElement('message');
 
-    axios({
-        url:"http://localhost:8080/user/login",
-        method:'post',
 
-        params:{
+    sendRequestParams('/user/login','post',{
         "username":username,
         "password":password
-        }
     }).then(res => {
         const data = res.data.data;
         if(data == null){

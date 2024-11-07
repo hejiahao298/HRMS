@@ -61,6 +61,10 @@ function getEleVal(eleId){
     return val;
 }
 
+function getElement(eleId){
+    return document.getElementById(eleId);
+}
+
 // 动态加载welCome-box div
 function loadWelcomeBox(){
     // 创建一个新的 XMLHttpRequest 对象
@@ -83,7 +87,6 @@ function loadWelcomeBox(){
     // 发送请求
     xhr.send();
 }
-
 
 // 动态加载sidebar.html
 function loadSidebar(){
@@ -108,4 +111,22 @@ function loadSidebar(){
     };
     // 发送请求
     xhr.send();
+}
+
+// axios封装
+function sendRequestData(url,method,data){
+    return axios({
+            url:'http://localhost:8080'+url,
+            method:method,
+            data:data
+        })
+}
+
+// axios封装
+function sendRequestParams(url,method,params){
+    return axios({
+        url:'http://localhost:8080'+url,
+        method:method,
+        params:params
+    })
 }

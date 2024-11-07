@@ -5,18 +5,14 @@ getAllDep();
 getAllPosition();
 
 function addJob(){
-    axios({
-        url:"http://localhost:8080/job/addJob",
-        method:"post",
 
-        data:{
-            "positionId":getEleVal("position"),
-            "departmentId":getEleVal("department"),
-            "description":getEleVal("description"),
-            "openings":getEleVal("num"),
-            "status":getEleVal("status"),
-            "postDate":getEleVal("postDate")
-        }
+    sendRequestData("/job/addJob","post",{
+        "positionId":getEleVal("position"),
+        "departmentId":getEleVal("department"),
+        "description":getEleVal("description"),
+        "openings":getEleVal("num"),
+        "status":getEleVal("status"),
+        "postDate":getEleVal("postDate")
     }).then(res => {
         const data = res.data.data;
         console.log(data)

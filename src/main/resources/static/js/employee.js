@@ -25,10 +25,8 @@ function createRow(emp) {
 }
 
 function loadAllEmp(){
-    axios({
-        url: "http://localhost:8080/emp/getAll",
-        method: 'get'
-    }).then(res => {
+    sendRequestData('/emp/getAll','get',null)
+        .then(res => {
         const data = res.data.data;
         data.forEach(emp => createRow(emp));
     });
@@ -41,10 +39,8 @@ function searchEmployee() {
     const search = document.getElementById("search").value;
     tbody.innerHTML = "";
 
-    axios({
-        url: "http://localhost:8080/emp/getEmpByName",
-        method: "get",
-        params: { "name": search }
+    sendRequestParams('/emp/getEmpByName','get',{
+        "name": search
     }).then(res => {
         const data = res.data.data;
         data.forEach(emp => createRow(emp));
@@ -54,10 +50,8 @@ function searchEmployee() {
 
 /*--------------------------------------删除员工-----------------------------------------*/
 function empDelete(empId) {
-    axios({
-        url: "http://localhost:8080/emp/deleteEmpById",
-        method: "delete",
-        params: { "empId": empId }
+    sendRequestParams('/emp/deleteEmpById','delete',{
+        "empId": empId
     }).then(res => {
         const data = res.data.data;
         if (data == null) {
